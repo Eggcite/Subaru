@@ -1,7 +1,7 @@
 # Subaru Project - ERP for SRTT following single-session, and training meditation.
 ===============
 
-This is the git for Meditation training and ERP changes. For collaborators on the project to look at the code for preproccessing, processing for extraction into R for data analysis.
+This is the git for Meditation training and ERP changes. For collaborators on the project to look at the code for preproccessing and processing for extraction into R for data analysis.
    
 **Note:** Key information detailed below.
 
