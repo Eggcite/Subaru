@@ -14,7 +14,7 @@ Chan, R. W., Alday, P. M., Zou-Williams, L., Lushington, K., Schlesewsky, M., Bo
 
 ### People who have contributed:
 Chan, R. W. - Idea conception and current coding
-Alday, P. M. - Idea conception, analysis, initial coding
+<p>Alday, P. M. - Idea conception, analysis, initial coding </p>
 Zou-Williams, L. - Current coding and statistical support
 Lushington, K. - Idea conception, interpretation, revisions
 Schlesewsky, M. - Idea conception, interpretation, centre support
