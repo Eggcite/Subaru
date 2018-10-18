@@ -3,13 +3,13 @@
 import mne
 import numpy as np
 import os.path as op
-#import philistine as ph
+
 import pandas as pd
 #import seaborn
 import statsmodels
 import glob
 mne.set_log_level('ERROR')
-
+#import philistine as ph
 
 def abs_threshold(epochs, threshold):
     ''' Compute boolean mask for dropping epochs based on absolute voltage threshold'''
