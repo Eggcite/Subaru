@@ -1,15 +1,25 @@
+"""
+Created on Circa August 2017
 
-
+@Author: Zou-Williams, L.
+@Curator: Chan, R.W.
+"""
+#Packages used:
 import mne
+import glob
 import numpy as np
 import os.path as op
-
 import pandas as pd
-#import seaborn
 import statsmodels
-import glob
-mne.set_log_level('ERROR')
+import csv
+
+#Unused packaged at this stage:
 #import philistine as ph
+#import seaborn
+
+mne.set_log_level('ERROR')
+
+#Rolling definitions for functions for Russell's sanity and learning -  def abs_threshold is to drop epochs based on absolute voltages
 
 def abs_threshold(epochs, threshold):
     ''' Compute boolean mask for dropping epochs based on absolute voltage threshold'''
@@ -19,6 +29,8 @@ def abs_threshold(epochs, threshold):
     # and we collapse across them to get a (n_epochs,) shaped array
     rej = np.any( np.abs(data) > threshold, axis=(-1,-2))
     return rej
+
+#Rolling definitions for functions for Russell's sanity and learning -  def ss_preproc is a definition 
 
 def ss_preproc(set_file):
     #read the raw file
@@ -45,7 +57,7 @@ for filename in set_files:
 	ss_preproc(filename)
 	print (filename[0:-4])
 
-
+#Here you can rely on baselining - should we?
 def ss_epo(set_file, event_id, windows):
     #reading files
     raw = mne.io.read_raw_fif(set_file)
@@ -140,14 +152,15 @@ event_id = {
 	}
 
 windows = {
+    "Prestim100": (-100,0),
+    "Prestim200": (-200,0),
     "ERN": (0,150),
     "N2" : (160,250),
     "P3" : (250,400),
-    "PE": (150,300)
     }
-	
-set_files = glob.glob('*.fif')
 
+#glob.glob is the package	
+set_files = glob.glob('*.fif')
 
 for filename in set_files:
 	ss_epo(filename,event_id=event_id,windows=windows)
@@ -157,7 +170,7 @@ for filename in set_files:
 def retrieve(epochs, windows, subj=None, items=None):
     df = epochs.to_data_frame(picks=None, index=['epoch','time'],scale_time=1e3)
     eeg_chs = [c for c in df.columns if c not in ('condition')]
-    factors = ['epoch','condition'] # the order is important here! otherwise the shortcut with items later won't  work
+    factors = ['epoch','condition'] # the order is important here! otherwise the shortcut with items later won't work
     sel = factors + eeg_chs
     df = df.reset_index()
 
