@@ -1,7 +1,7 @@
 """
 Created on Tue Aug 28 17:12:36 2018
 
-@author: Zou-Williams, L. & Chan, R.W.
+@author: Zou-Williams, L.
 """
 
 import mne
