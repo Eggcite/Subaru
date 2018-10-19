@@ -13,7 +13,7 @@ It is avaliable here:  https://psyarxiv.com/m8hbq/
 Chan, R. W., Alday, P. M., Zou-Williams, L., Lushington, K., Schlesewsky, M., Bornkessel-Schlesewsky, I., & Immink, M. A. (2018, April 19). Single-session and training effects of focused-attention meditation on neurophysiological and behavioural correlates of cognitive control during motor sequence learning. https://doi.org/10.31234/osf.io/m8hbq
 
 ### People who have contributed:
-Chan, R. W. - Idea conception and current coding
+Chan, R. W. - Idea conception, current coding, conduct of experiment, interpretation, statistics, lead author
 <p>Alday, P. M. - Idea conception, analysis, initial coding</p>
 <p>Zou-Williams, L. - Current coding and statistical support</p>
 <p>Lushington, K. - Idea conception, interpretation, revisions</p>
