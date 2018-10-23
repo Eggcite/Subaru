@@ -19,7 +19,7 @@ import csv
 
 mne.set_log_level('ERROR')
 
-#Rolling definitions for functions for Russell's sanity and learning -  def abs_threshold is to drop epochs based on absolute voltages
+#Rolling definitions for functions for Russell's sanity and anyone learning -  def abs_threshold is to drop epochs based on absolute voltages
 
 def abs_threshold(epochs, threshold):
     ''' Compute boolean mask for dropping epochs based on absolute voltage threshold'''
@@ -30,7 +30,7 @@ def abs_threshold(epochs, threshold):
     rej = np.any( np.abs(data) > threshold, axis=(-1,-2))
     return rej
 
-#Rolling definitions for functions for Russell's sanity and learning -  def ss_preproc is a definition 
+#Rolling definitions for functions for Russell's sanity and anyone learning -  def ss_preproc is a definition 
 
 def ss_preproc(set_file):
     #read the raw file
@@ -57,7 +57,7 @@ for filename in set_files:
 	ss_preproc(filename)
 	print (filename[0:-4])
 
-#Here you can rely on baselining - should we?
+#Here you can rely on baselining - but no?
 def ss_epo(set_file, event_id, windows):
     #reading files
     raw = mne.io.read_raw_fif(set_file)
@@ -153,13 +153,12 @@ event_id = {
 
 windows = {
     "Prestim100": (-100,0),
-    "Prestim200": (-200,0),
     "ERN": (0,150),
     "N2" : (160,250),
     "P3" : (250,400),
     }
 
-#glob.glob is the package	
+#glob.glob is the function to run through the files
 set_files = glob.glob('*.fif')
 
 for filename in set_files:
@@ -190,8 +189,6 @@ def retrieve(epochs, windows, subj=None, items=None):
     retrieve = pd.concat(retrieve)
     return retrieve
 	
-
-
 ss_avg = dict() # new empty dict
 ss_wins = dict()
 # dict with empty list for each condition
