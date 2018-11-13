@@ -79,6 +79,7 @@ def ss_epo(set_file, event_id, windows):
     
     
     d=events[:,2].tolist()
+    d.count(241)
     d[0:200]
 
     for x in d:
@@ -135,9 +136,6 @@ def ss_epo(set_file, event_id, windows):
     bad_epoch_mask = abs_threshold(epochs, 75e-6)
     epochs.drop(bad_epoch_mask,reason="absolute threshold")
     epochs.save(filename+'-epo.fif')
-
-
-
 
 event_id={
 	'S4b_Sti_correct':241250,'S4b_Sti_incorrect':241243,
@@ -221,9 +219,9 @@ df.to_csv('EveryoneS4ERP.csv',sep=',')
 
 epochs.ch_names
 [u'F7',1
- u'F3',2
- u'Fz',3
- u'F4',4
+u'F3',2
+u'Fz',3
+u'F4',4
  u'F8',5
  u'FC5',6
  u'FC1',7
